@@ -18,13 +18,14 @@ public class Usuario {
 		this.edad = edad;
 	}
 	
-	public static void guardarContra(String contra) {
+	public static boolean guardarContra(String contra) {
 		for(int i=0;i<contraseñasPrevias.length;i++) {
 			if(contraseñasPrevias[i]==null) {
 				contraseñasPrevias[i]=contra;
-				break;
+				return true;
 			}
 		} contraseñasPrevias[0]=contra;
+		return true;
 	}
 	
 	public static boolean contraRepetida(String contrasenia) {
